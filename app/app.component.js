@@ -20,14 +20,19 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
             AppComponent = (function () {
+                //Constructor que inicializa la clase, siempre se lanzara cuando se crea el objeto del component.
+                //Sirve para inicializar el objeto o variables especificas
                 function AppComponent() {
                     //Creando una propiedad con typescipt, para pasar al template con {{}}
                     this.titulo = "HOLA MUNDO con angular2";
-                    //Crear propiedades tambien publica (no es necesario indicar).
-                    this.pelicula = "batman v/s Superman"; //(":string" , indica que es una variable del tipo string)
+                    this.pelicula = "batman v/s Superman";
                     this.director = "Zack Snider";
-                    this.anio = 2016; //(Se debe indicar number si solo es numero, de lo contrario la consola data aviso que no pude asignar un tipo string a un number)
+                    this.anio = 2016;
+                    this.holaMundo(); //este mensaje se lanzara al iniciar la pagina/componente
                 }
+                AppComponent.prototype.holaMundo = function () {
+                    alert("Pelicula: " + this.pelicula + " - " + this.director + " - " + this.anio);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
