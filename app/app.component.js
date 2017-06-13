@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './model/pelicula'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, pelicula_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (pelicula_1_1) {
+                pelicula_1 = pelicula_1_1;
             }],
         execute: function() {
             // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
@@ -25,13 +28,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function AppComponent() {
                     //Creando una propiedad con typescipt, para pasar al template con {{}}
                     this.titulo = "HOLA MUNDO con angular2";
-                    this.pelicula = "batman v/s Superman";
-                    this.director = "Zack Snider";
-                    this.anio = 2016;
+                    //Se insertan los datos de la pelicula
+                    this.pelicula = new pelicula_1.Pelicula(1, "batman v/s Superman", "Zack Snider", 2016);
                     this.holaMundo(); //este mensaje se lanzara al iniciar la pagina/componente
                 }
                 AppComponent.prototype.holaMundo = function () {
-                    alert("Pelicula: " + this.pelicula + " - " + this.director + " - " + this.anio);
+                    //Se imprime el objeto pelicula
+                    console.log(this.pelicula);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
