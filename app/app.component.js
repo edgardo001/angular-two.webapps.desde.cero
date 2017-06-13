@@ -30,16 +30,17 @@ System.register(['angular2/core', './model/pelicula'], function(exports_1, conte
                     this.titulo = "HOLA MUNDO con angular2";
                     //Se insertan los datos de la pelicula
                     this.pelicula = new pelicula_1.Pelicula(1, "batman v/s Superman", "Zack Snider", 2016);
-                    this.holaMundo(); //este mensaje se lanzara al iniciar la pagina/componente
+                    this.debug(); //este mensaje se lanzara al iniciar la pagina/componente
                 }
-                AppComponent.prototype.holaMundo = function () {
+                AppComponent.prototype.debug = function () {
                     //Se imprime el objeto pelicula
                     console.log(this.pelicula);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        templateUrl: "app/view/peliculas.html"
+                        templateUrl: "app/view/peliculas.html",
+                        styleUrls: ["../assets/css/style.css"]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

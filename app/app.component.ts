@@ -6,7 +6,8 @@ import {Pelicula} from './model/pelicula';//Se importa el modelo
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 @Component({
     selector: 'my-app',
-    templateUrl: "app/view/peliculas.html"
+    templateUrl: "app/view/peliculas.html",
+    styleUrls: ["../assets/css/style.css"]
 })
  
 // Clase del componente donde iran los datos y funcionalidades
@@ -20,10 +21,10 @@ export class AppComponent {
 	constructor(){
 		//Se insertan los datos de la pelicula
 		this.pelicula=new Pelicula(1,"batman v/s Superman","Zack Snider",2016);
-		this.holaMundo()//este mensaje se lanzara al iniciar la pagina/componente
+		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
 	}
 
-	holaMundo(){
+	debug(){
 		//Se imprime el objeto pelicula
 		console.log(this.pelicula)
 	}
