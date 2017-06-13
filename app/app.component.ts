@@ -4,14 +4,7 @@ import {Component} from 'angular2/core';
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 @Component({
     selector: 'my-app',
-    template: `<h1>{{titulo}} Angular 2</h1>
-    			<ul>
-    			<li>Titulo: <strong>{{pelicula}}</strong></li>
-    			<li>Director: <strong>{{director}}</strong></li>
-    			<li>Año:<strong>{{anio}}</strong></li>
-    			</ul>
-
-    `
+    templateUrl: "app/view/peliculas.html"
 })
  
 // Clase del componente donde iran los datos y funcionalidades
