@@ -24,9 +24,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     //Creando una propiedad con typescipt, para pasar al template con {{}}
                     this.titulo = "HOLA MUNDO con angular2";
                     //Crear propiedades tambien publica (no es necesario indicar).
-                    this.pelicula = "batman v/s Superman";
+                    this.pelicula = "batman v/s Superman"; //(":string" , indica que es una variable del tipo string)
                     this.director = "Zack Snider";
-                    this.anio = "2016";
+                    this.anio = 2016; //(Se debe indicar number si solo es numero, de lo contrario la consola data aviso que no pude asignar un tipo string a un number)
                 }
                 AppComponent = __decorate([
                     core_1.Component({

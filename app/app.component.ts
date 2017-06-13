@@ -12,8 +12,9 @@ export class AppComponent {
 	//Creando una propiedad con typescipt, para pasar al template con {{}}
 	public titulo="HOLA MUNDO con angular2";
 	//Crear propiedades tambien publica (no es necesario indicar).
-	pelicula = "batman v/s Superman"
-	director = "Zack Snider"
-	anio= "2016"
+	public pelicula:string = "batman v/s Superman"//(":string" , indica que es una variable del tipo string)
+	public director:string = "Zack Snider"
+	public anio:number= 2016//(Se debe indicar number si solo es numero, de lo contrario la consola data aviso que no pude asignar un tipo string a un number)
+
 
 }
