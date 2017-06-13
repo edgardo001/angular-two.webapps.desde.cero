@@ -21,11 +21,17 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
             AppComponent = (function () {
                 function AppComponent() {
+                    //Creando una propiedad con typescipt, para pasar al template con {{}}
+                    this.titulo = "HOLA MUNDO con angular2";
+                    //Crear propiedades tambien publica (no es necesario indicar).
+                    this.pelicula = "batman v/s Superman";
+                    this.director = "Zack Snider";
+                    this.anio = "2016";
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>Hola mundo con Angular 2 !! victorroblesweb.es</h1>'
+                        template: "<h1>{{titulo}} Angular 2</h1>\n    \t\t\t<ul>\n    \t\t\t<li>Titulo: <strong>{{pelicula}}</strong></li>\n    \t\t\t<li>Director: <strong>{{director}}</strong></li>\n    \t\t\t<li>A\u00F1o:<strong>{{anio}}</strong></li>\n    \t\t\t</ul>\n\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
