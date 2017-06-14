@@ -1,54 +1,20 @@
 // Importar el núcleo de Angular
 import {Component} from 'angular2/core';
-import {Pelicula} from './model/pelicula';//Se importa el modelo
+import {PeliculasListComponent} from "./components/peliculas-list.component";//Cargo un nuevo componente
+import {PeliculasFooterComponent} from "./components/peliculas-footer.component";//Cargo un nuevo componente
+
 }
  
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 @Component({
     selector: 'my-app',
     templateUrl: "app/view/peliculas.html",
-    styleUrls: ["../assets/css/style.css"]//Se importa un css
+    directives:[PeliculasListComponent, PeliculasFooterComponent],//Paso un array con todos loc componentes que deseo utilizar    
 })
  
 // Clase del componente donde iran los datos y funcionalidades
 export class AppComponent { 
 	//Creando una propiedad con typescipt, para pasar al template con {{}}
 	public titulo="HOLA MUNDO con angular"
-	public pelicula:Pelicula//Se deja una propiedad de pelicula que es un modelo
-	public mostrarDatos:boolean
-	public peliculas//Un array de string, puede o no ir su "tipado" (podria ir cualquier dato al no ir)
-
-	//Constructor que inicializa la clase, siempre se lanzara cuando se crea el objeto del component.
-	//Sirve para inicializar el objeto o variables especificas
-	constructor(){		
-		//Se insertan los datos de la pelicula
-		this.mostrarDatos=false
-		this.pelicula=new Pelicula(1,"batman v/s Superman","Zack Snider",2016);
-		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
-
-		this.peliculas=[
-				new Pelicula(1,"Batman v/s Superman","Zack Snider",2016),//Se cambia ";"" por "," esto es por que es un array
-				new Pelicula(2,"La verdad duele","Will Smith",2016),
-				new Pelicula(3,"El señor de los anillos","desconocido",2002),
-				new Pelicula(4,"Una historia real","El de supersalidos",2015),
-				new Pelicula(5,"Don Jon","Josep Gordon Levit",2004),//Si un constructor solicita un dato, este debe ir, si se omite, podria dar fallas de compilacion u otros
-		]
-	}
-
-	debug(titulo=null){
-		if (titulo!= null) {
-			//Se imprime el objeto pelicula
-			console.log(this.pelicula.titulo)
-		}else{			
-			console.log(this.pelicula)
-		}		
-	}
-
-	onShowHide(){
-		this.mostrarDatos=true
-	}
-
-	onHideShow(){
-		this.mostrarDatos=false
-	}
+	
 }
