@@ -1,5 +1,5 @@
-<h1>{{titulo}} Angular 2</h1>
-<p>Listado de peliculas</p>
+<h1>{{titulo}}</h1>
+<p>Pelicula Favorita</p>
 <!--Indico al boton que tendra un evento click de angular-->
 <!--Directiva ngClass para aparecer o desaparecer el boton-->
 <!--[class.showingData] Habilita o Deshabilita una directiva CSS segun una condicion-->
@@ -13,3 +13,8 @@
 <li>Director: <strong>{{pelicula.director}}</strong></li>
 <li>Año:<strong>{{pelicula.anio}}</strong></li>
 </ul>
+
+<p>
+Cambiar Titulo:
+	<input type="text" (keypress)="debug(true)" [(ngModel)]="pelicula.titulo">
+</p>

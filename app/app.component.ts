@@ -16,6 +16,7 @@ export class AppComponent {
 	public titulo="HOLA MUNDO con angular"
 	public pelicula:Pelicula//Se deja una propiedad de pelicula que es un modelo
 	public mostrarDatos:boolean
+	public peliculas:Array<string>//Un array de string, puede o no ir su "tipado"
 
 	//Constructor que inicializa la clase, siempre se lanzara cuando se crea el objeto del component.
 	//Sirve para inicializar el objeto o variables especificas
@@ -24,11 +25,17 @@ export class AppComponent {
 		this.mostrarDatos=false
 		this.pelicula=new Pelicula(1,"batman v/s Superman","Zack Snider",2016);
 		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
+
+
 	}
 
-	debug(){
-		//Se imprime el objeto pelicula
-		console.log(this.pelicula)
+	debug(titulo=null){
+		if (titulo!= null) {
+			//Se imprime el objeto pelicula
+			console.log(this.pelicula.titulo)
+		}else{			
+			console.log(this.pelicula)
+		}		
 	}
 
 	onShowHide(){
@@ -38,5 +45,4 @@ export class AppComponent {
 	onHideShow(){
 		this.mostrarDatos=false
 	}
-
 }
