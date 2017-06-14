@@ -1,6 +1,14 @@
 <h1>{{titulo}} Angular 2</h1>
 <p>Listado de peliculas</p>
-<ul>
+<!--Indico al boton que tendra un evento click de angular-->
+<!--Directiva ngClass para aparecer o desaparecer el boton-->
+<!--[class.showingData] Habilita o Deshabilita una directiva CSS segun una condicion-->
+<button (click)="onShowHide()" [class.showingData]="mostrarDatos===true"> Mostrar datos </button>
+<button (click)="onHideShow()" [class.showingData]="mostrarDatos===false"> Ocultar datos </button>
+<!--si la variable es true, se mostrara, si es false, no se mostrara el "ul" y nada que este en su interior-->
+<p>Estado de la lista: {{mostrarDatos?"Mostrar":"Ocultar"}}</p>
+
+<ul *ngIf="mostrarDatos === true">
 <li>Titulo: <strong>{{pelicula.titulo}}</strong></li>
 <li>Director: <strong>{{pelicula.director}}</strong></li>
 <li>Año:<strong>{{pelicula.anio}}</strong></li>

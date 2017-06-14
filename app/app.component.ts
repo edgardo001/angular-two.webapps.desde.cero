@@ -7,19 +7,21 @@ import {Pelicula} from './model/pelicula';//Se importa el modelo
 @Component({
     selector: 'my-app',
     templateUrl: "app/view/peliculas.html",
-    styleUrls: ["../assets/css/style.css"]
+    styleUrls: ["../assets/css/style.css"]//Se importa un css
 })
  
 // Clase del componente donde iran los datos y funcionalidades
 export class AppComponent { 
 	//Creando una propiedad con typescipt, para pasar al template con {{}}
-	public titulo="HOLA MUNDO con angular2"
-	public pelicula:Pelicula;//Se deja una propiedad de pelicula que es un modelo
+	public titulo="HOLA MUNDO con angular"
+	public pelicula:Pelicula//Se deja una propiedad de pelicula que es un modelo
+	public mostrarDatos:boolean
 
 	//Constructor que inicializa la clase, siempre se lanzara cuando se crea el objeto del component.
 	//Sirve para inicializar el objeto o variables especificas
-	constructor(){
+	constructor(){		
 		//Se insertan los datos de la pelicula
+		this.mostrarDatos=false
 		this.pelicula=new Pelicula(1,"batman v/s Superman","Zack Snider",2016);
 		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
 	}
@@ -27,6 +29,14 @@ export class AppComponent {
 	debug(){
 		//Se imprime el objeto pelicula
 		console.log(this.pelicula)
+	}
+
+	onShowHide(){
+		this.mostrarDatos=true
+	}
+
+	onHideShow(){
+		this.mostrarDatos=false
 	}
 
 }

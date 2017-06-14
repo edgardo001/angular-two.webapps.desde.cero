@@ -27,8 +27,9 @@ System.register(['angular2/core', './model/pelicula'], function(exports_1, conte
                 //Sirve para inicializar el objeto o variables especificas
                 function AppComponent() {
                     //Creando una propiedad con typescipt, para pasar al template con {{}}
-                    this.titulo = "HOLA MUNDO con angular2";
+                    this.titulo = "HOLA MUNDO con angular";
                     //Se insertan los datos de la pelicula
+                    this.mostrarDatos = false;
                     this.pelicula = new pelicula_1.Pelicula(1, "batman v/s Superman", "Zack Snider", 2016);
                     this.debug(); //este mensaje se lanzara al iniciar la pagina/componente
                 }
@@ -36,11 +37,17 @@ System.register(['angular2/core', './model/pelicula'], function(exports_1, conte
                     //Se imprime el objeto pelicula
                     console.log(this.pelicula);
                 };
+                AppComponent.prototype.onShowHide = function () {
+                    this.mostrarDatos = true;
+                };
+                AppComponent.prototype.onHideShow = function () {
+                    this.mostrarDatos = false;
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: "app/view/peliculas.html",
-                        styleUrls: ["../assets/css/style.css"]
+                        styleUrls: ["../assets/css/style.css"] //Se importa un css
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
