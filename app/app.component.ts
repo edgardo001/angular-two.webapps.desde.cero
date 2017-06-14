@@ -26,7 +26,13 @@ export class AppComponent {
 		this.pelicula=new Pelicula(1,"batman v/s Superman","Zack Snider",2016);
 		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
 
-
+		this.peliculas=[
+				new Pelicula(1,"Batman v/s Superman","Zack Snider",2016);
+				new Pelicula(2,"La verdad duele","Will Smith",2016);
+				new Pelicula(3,"El señor de los anillos","desconocido");
+				new Pelicula(4,"Una historia real","El de supersalidos",2015);
+				new Pelicula(5,"Don Jon","Josep Gordon Levit","");
+		]
 	}
 
 	debug(titulo=null){
