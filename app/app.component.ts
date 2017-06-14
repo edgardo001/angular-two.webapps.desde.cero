@@ -16,7 +16,7 @@ export class AppComponent {
 	public titulo="HOLA MUNDO con angular"
 	public pelicula:Pelicula//Se deja una propiedad de pelicula que es un modelo
 	public mostrarDatos:boolean
-	public peliculas:Array<string>//Un array de string, puede o no ir su "tipado"
+	public peliculas//Un array de string, puede o no ir su "tipado" (podria ir cualquier dato al no ir)
 
 	//Constructor que inicializa la clase, siempre se lanzara cuando se crea el objeto del component.
 	//Sirve para inicializar el objeto o variables especificas
@@ -27,11 +27,11 @@ export class AppComponent {
 		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
 
 		this.peliculas=[
-				new Pelicula(1,"Batman v/s Superman","Zack Snider",2016);
-				new Pelicula(2,"La verdad duele","Will Smith",2016);
-				new Pelicula(3,"El señor de los anillos","desconocido");
-				new Pelicula(4,"Una historia real","El de supersalidos",2015);
-				new Pelicula(5,"Don Jon","Josep Gordon Levit","");
+				new Pelicula(1,"Batman v/s Superman","Zack Snider",2016),//Se cambia ";"" por "," esto es por que es un array
+				new Pelicula(2,"La verdad duele","Will Smith",2016),
+				new Pelicula(3,"El señor de los anillos","desconocido",2002),
+				new Pelicula(4,"Una historia real","El de supersalidos",2015),
+				new Pelicula(5,"Don Jon","Josep Gordon Levit",2004),//Si un constructor solicita un dato, este debe ir, si se omite, podria dar fallas de compilacion u otros
 		]
 	}
 

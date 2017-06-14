@@ -35,9 +35,9 @@ System.register(['angular2/core', './model/pelicula'], function(exports_1, conte
                     this.peliculas = [
                         new pelicula_1.Pelicula(1, "Batman v/s Superman", "Zack Snider", 2016),
                         new pelicula_1.Pelicula(2, "La verdad duele", "Will Smith", 2016),
-                        new pelicula_1.Pelicula(3, "El señor de los anillos", "desconocido"),
+                        new pelicula_1.Pelicula(3, "El señor de los anillos", "desconocido", 2002),
                         new pelicula_1.Pelicula(4, "Una historia real", "El de supersalidos", 2015),
-                        new pelicula_1.Pelicula(5, "Don Jon", "Josep Gordon Levit", "")
+                        new pelicula_1.Pelicula(5, "Don Jon", "Josep Gordon Levit", 2004),
                     ];
                 }
                 AppComponent.prototype.debug = function (titulo) {
