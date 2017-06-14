@@ -12,16 +12,18 @@ import {Pelicula} from '../model/pelicula';//Se importa el modelo
 // Clase del componente donde iran los datos y funcionalidades
 export class PeliculasListComponent { 
 	public pelicula:Pelicula//Se deja una propiedad de pelicula que es un modelo
+	public peliculaElegida:Pelicula//Se deja una propiedad de pelicula que es un modelo
 	public mostrarDatos:boolean
 	public peliculas//Un array de string, puede o no ir su "tipado" (podria ir cualquier dato al no ir)
 	//public peliculas: Array<Pelicula>;//Un array tambien se podria definir de esta manera
+
 
 	//Constructor que inicializa la clase, siempre se lanzara cuando se crea el objeto del component.
 	//Sirve para inicializar el objeto o variables especificas
 	constructor(){		
 		//Se insertan los datos de la pelicula
 		this.mostrarDatos=false
-		this.pelicula=new Pelicula(1,"batman v/s Superman","Zack Snider",2016);
+
 		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
 
 		this.peliculas=[
@@ -31,6 +33,8 @@ export class PeliculasListComponent {
 				new Pelicula(4,"Una historia real","El de supersalidos",2015),
 				new Pelicula(5,"Don Jon","Josep Gordon Levit",2004),//Si un constructor solicita un dato, este debe ir, si se omite, podria dar fallas de compilacion u otros
 		]
+		this.peliculaElegida=this.peliculas[0]
+		this.pelicula=this.peliculas[0]
 	}
 
 	debug(titulo=null){
@@ -48,5 +52,10 @@ export class PeliculasListComponent {
 
 	onHideShow(){
 		this.mostrarDatos=false
+	}
+
+	onCambiarPelicula(pelicula){
+		this.pelicula = pelicula
+		this.peliculaElegida = pelicula
 	}
 }
