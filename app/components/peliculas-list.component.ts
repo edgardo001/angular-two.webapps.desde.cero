@@ -27,7 +27,7 @@ export class PeliculasListComponent {
 		//Se insertan los datos de la pelicula
 		this.mostrarDatos=false
 
-		this.debug()//este mensaje se lanzara al iniciar la pagina/componente
+		//this.debug()//este mensaje se lanzara al iniciar la pagina/componente
 
 		this.peliculas= this._peliculasService.getPeliculas()//obtengo los datos de un servicio
 		this.peliculaElegida=this.peliculas[0]
@@ -37,9 +37,9 @@ export class PeliculasListComponent {
 	debug(titulo=null){
 		if (titulo!= null) {
 			//Se imprime el objeto pelicula
-			console.log(this.pelicula.titulo)
+			//console.log(this.pelicula.titulo)
 		}else{			
-			console.log(this.pelicula)
+			//console.log(this.pelicula)
 		}		
 	}
 
