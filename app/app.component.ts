@@ -2,8 +2,6 @@
 import {Component} from 'angular2/core';
 import {PeliculasListComponent} from "./components/peliculas-list.component";//Cargo un nuevo componente
 import {PeliculasFooterComponent} from "./components/peliculas-footer.component";//Cargo un nuevo componente
-
-}
  
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 @Component({

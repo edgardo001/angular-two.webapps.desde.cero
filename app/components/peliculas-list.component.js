@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../model/pelicula'], function(exports_1, context_1) {
+System.register(['angular2/core', '../services/peliculas.services'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,29 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, pelicula_1;
+    var core_1, peliculas_services_1;
     var PeliculasListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (pelicula_1_1) {
-                pelicula_1 = pelicula_1_1;
+            function (peliculas_services_1_1) {
+                peliculas_services_1 = peliculas_services_1_1;
             }],
         execute: function() {
             // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
+            //con "providers", le indica que puedo usar un servicio dentro de este componente
             PeliculasListComponent = (function () {
-                //public peliculas: Array<Pelicula>;//Un array tambien se podria definir de esta manera
                 //Constructor que inicializa la clase, siempre se lanzara cuando se crea el objeto del component.
                 //Sirve para inicializar el objeto o variables especificas
-                function PeliculasListComponent() {
+                function PeliculasListComponent(_peliculasService) {
+                    this._peliculasService = _peliculasService;
+                    this.datoServicioDemo = this._peliculasService.getDemo(); //Obtengo datos de un servicio
                     //Se insertan los datos de la pelicula
                     this.mostrarDatos = false;
                     this.debug(); //este mensaje se lanzara al iniciar la pagina/componente
-                    this.peliculas = [
-                        new pelicula_1.Pelicula(1, "Batman v/s Superman", "Zack Snider", 2016),
-                        new pelicula_1.Pelicula(2, "La verdad duele", "Will Smith", 2016),
-                        new pelicula_1.Pelicula(3, "El señor de los anillos", "desconocido", 2002),
-                        new pelicula_1.Pelicula(4, "Una historia real", "El de supersalidos", 2015),
-                        new pelicula_1.Pelicula(5, "Don Jon", "Josep Gordon Levit", 2004),
-                    ];
+                    this.peliculas = this._peliculasService.getPeliculas(); //obtengo los datos de un servicio
                     this.peliculaElegida = this.peliculas[0];
                     this.pelicula = this.peliculas[0];
                 }
@@ -61,11 +57,13 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
                     this.peliculaElegida = pelicula;
                 };
                 PeliculasListComponent = __decorate([
+                    //Se importa un servicio
                     core_1.Component({
                         selector: 'peliculas-list',
                         templateUrl: "app/view/peliculas-list.html",
+                        providers: [peliculas_services_1.PeliculasService],
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [peliculas_services_1.PeliculasService])
                 ], PeliculasListComponent);
                 return PeliculasListComponent;
             }());

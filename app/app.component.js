@@ -31,6 +31,7 @@ System.register(['angular2/core', "./components/peliculas-list.component", "./co
                     this.titulo = "HOLA MUNDO con angular";
                 }
                 AppComponent = __decorate([
+                    //Cargo un nuevo componente
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: "app/view/peliculas.html",
