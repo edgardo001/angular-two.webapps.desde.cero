@@ -5,6 +5,7 @@ import {PeliculasFooterComponent} from "./components/peliculas-footer.component"
 //directivas del router
 import {ROUTER_DIRECTIVES, RouteConfig, Router} from "angular2/router";
 import {ContactoComponent} from "./components/contacto.component";
+import {CrearPeliculaComponent} from "./components/crear-pelicula.component";
 }
  
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
@@ -14,12 +15,14 @@ import {ContactoComponent} from "./components/contacto.component";
     directives:[PeliculasListComponent, 
     PeliculasFooterComponent,
     ContactoComponent,
+    CrearPeliculaComponent,
     ROUTER_DIRECTIVES],//Paso un array con todos loc componentes que deseo utilizar    
 })
  
 @RouteConfig([
     {path:"/peliculas", name:"Peliculas", component: PeliculasListComponent, useAsDefault:true},
-	{path:"/contacto", name:"Contacto", component: ContactoComponent}
+	{path:"/crear-pelicula", name:"CreaPelicula", component: CrearPeliculaComponent}
+    {path:"/contacto", name:"Contacto", component: ContactoComponent}
 ])
 
 // Clase del componente donde iran los datos y funcionalidades

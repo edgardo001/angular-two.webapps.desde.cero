@@ -12,4 +12,9 @@ export class PeliculasService{
 		//obtengo los datos de una constante
 		return PELICULAS
 	}
+
+	insertPelicula(pelicula: PELICULA){
+		//Consigue la info de las peliculas y agrega una nueva pelicula		
+		Promise.resolve(PELICULAS).then((peliculas:Pelicula[]) => peliculas.push(pelicula))
+	}
 }

@@ -31,6 +31,10 @@ System.register(["angular2/core", "./mock.peliculas"], function(exports_1, conte
                     //obtengo los datos de una constante
                     return mock_peliculas_1.PELICULAS;
                 };
+                PeliculasService.prototype.insertPelicula = function (pelicula) {
+                    //Consigue la info de las peliculas y agrega una nueva pelicula		
+                    Promise.resolve(mock_peliculas_1.PELICULAS).then(function (peliculas) { return peliculas.push(pelicula); });
+                };
                 PeliculasService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])

@@ -29,7 +29,7 @@ Cambiar Titulo:
 		<!--(click)="onCambiarPelicula(pelicula)" =  Asigna un evento Click-->
 		<!--class="pelicula-title" = asigna la clase css para que pueda agregar una linea al pasar sobre este elemento-->
 		<!--[class.clicked]="peliculaElegida.id === pelicula.id" consulta si la pelicula elegida es igual a la pelicula seleccionada, si es true, asigna la clase css al elemento-->
-		<li (click)="onCambiarPelicula(pelicula)" class="pelicula-title" [class.clicked]="peliculaElegida.id === pelicula.id">Titulo: <strong>{{pelicula.titulo}}</strong></li>
+		<li (click)="onCambiarPelicula(pelicula)" class="pelicula-title" [class.clicked]="peliculaElegida.titulo === pelicula.titulo">Titulo: <strong>{{pelicula.titulo}}</strong></li>
 		<li>Director: <strong>{{pelicula.director}}</strong></li>
 		<li *ngIf="pelicula.anio">Año:<strong>{{pelicula.anio}}</strong></li>
 	</ul>
