@@ -29,14 +29,21 @@ System.register(['angular2/core', '../model/pelicula', 'angular2/router', '../se
         execute: function() {
             // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
             CrearPeliculaComponent = (function () {
-                function CrearPeliculaComponent(_peliculasService, _router) {
+                function CrearPeliculaComponent(_peliculasService, _router, _routeParams) {
                     this._peliculasService = _peliculasService;
                     this._router = _router;
+                    this._routeParams = _routeParams;
+                    this.TituloPelicula = "";
                 }
                 CrearPeliculaComponent.prototype.onCrearPelicula = function (titulo, director, anio) {
                     var pelicula = new pelicula_1.Pelicula(77, titulo, director, anio);
                     this._peliculasService.insertPelicula(pelicula);
                     //console.log(pelicula)
+                };
+                //Evento que se ejecuta al iniciar la vista
+                CrearPeliculaComponent.prototype.ngOnInit = function () {
+                    //Se obtiene el datos pasado por url por metodo get
+                    this.TituloPelicula = this._routeParams.get("titulo");
                 };
                 CrearPeliculaComponent = __decorate([
                     //Se importa un servicio
@@ -44,7 +51,7 @@ System.register(['angular2/core', '../model/pelicula', 'angular2/router', '../se
                         templateUrl: "app/view/crear-pelicula.html",
                         providers: [peliculas_services_1.PeliculasService] //Para realizar uso de un servicio injectable
                     }), 
-                    __metadata('design:paramtypes', [peliculas_services_1.PeliculasService, router_1.Router])
+                    __metadata('design:paramtypes', [peliculas_services_1.PeliculasService, router_1.Router, router_1.RouteParams])
                 ], CrearPeliculaComponent);
                 return CrearPeliculaComponent;
             }());

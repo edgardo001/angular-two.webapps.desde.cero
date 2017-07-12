@@ -2,6 +2,8 @@
 import {Component} from 'angular2/core';
 import {Pelicula} from '../model/pelicula';//Se importa el modelo
 import {PeliculasService} from '../services/peliculas.services';//Se importa un servicio
+//directivas del router
+import {ROUTER_DIRECTIVES, RouteConfig, Router} from "angular2/router";
  
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 //con "providers", le indica que puedo usar un servicio dentro de este componente
@@ -9,6 +11,7 @@ import {PeliculasService} from '../services/peliculas.services';//Se importa un 
     selector: 'peliculas-list',
     templateUrl: "app/view/peliculas-list.html",    
     providers:[PeliculasService],
+    directives: [ROUTER_DIRECTIVES]
 })
 
 // Clase del componente donde iran los datos y funcionalidades
