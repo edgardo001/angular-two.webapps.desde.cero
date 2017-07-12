@@ -35,15 +35,16 @@ System.register(['angular2/core', '../model/pelicula', 'angular2/router', '../se
                     this._routeParams = _routeParams;
                     this.TituloPelicula = "";
                 }
-                CrearPeliculaComponent.prototype.onCrearPelicula = function (titulo, director, anio) {
-                    var pelicula = new pelicula_1.Pelicula(77, titulo, director, anio);
-                    this._peliculasService.insertPelicula(pelicula);
+                CrearPeliculaComponent.prototype.onSubmit = function () {
+                    this._peliculasService.insertPelicula(this.nuevaPelicula);
+                    this._router.navigate(["Peliculas"]);
                     //console.log(pelicula)
                 };
                 //Evento que se ejecuta al iniciar la vista
                 CrearPeliculaComponent.prototype.ngOnInit = function () {
                     //Se obtiene el datos pasado por url por metodo get
                     this.TituloPelicula = this._routeParams.get("titulo");
+                    this.nuevaPelicula = new pelicula_1.Pelicula(0, this._routeParams.get("titulo"), this._routeParams.get("director"), this._routeParams.get("anio"));
                 };
                 CrearPeliculaComponent = __decorate([
                     //Se importa un servicio
